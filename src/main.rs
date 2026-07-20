@@ -1,18 +1,17 @@
-use array::{max_product_subarray::max_product, max_subarray::max_sub_array};
-use helpers::select_random::select_random_problem;
-use strings::first_unique_char::first_uniq_char;
+// use helpers::select_random::select_random_problem;
 
+mod linked_lists;
 
-mod strings;
-mod heap;
-mod array;
-mod helpers;
+use linked_lists::reverse_list::reverse_list;
+use linked_lists::ListNode;
 
 fn main() {
-    select_random_problem();
-    let test_str = String::from("loveleetcode");
-    first_uniq_char(test_str);
+    // select_random_problem();
 
+    let mut head = ListNode::new(3);
+    let mut first = head.next = head;
+
+    reverse_list(head);
 }
 
 
