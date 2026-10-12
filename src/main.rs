@@ -1,17 +1,22 @@
-// use helpers::select_random::select_random_problem;
+mod binary_trees;
 
-mod linked_lists;
+use std::{cell::RefCell, rc::Rc};
 
-use linked_lists::reverse_list::reverse_list;
-use linked_lists::ListNode;
+use binary_trees::{invert_binary_tree, tree_node::TreeNode};
 
 fn main() {
     // select_random_problem();
+    //
+    let root = Rc::new(RefCell::new(TreeNode::new(3)));
+    let left = Rc::new(RefCell::new(TreeNode::new(2)));
+    let right = Rc::new(RefCell::new(TreeNode::new(8)));
 
-    let mut head = ListNode::new(3);
-    let mut first = head.next = head;
+    root.borrow_mut().left = Some(left);
+    root.borrow_mut().right = Some(right);
 
-    reverse_list(head);
+    invert_binary_tree::invert_tree(Some(root));
+
+
 }
 
 
