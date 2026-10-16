@@ -1,10 +1,18 @@
-mod helpers;
+mod working;
 
-use helpers::select_random::{select_random_problem, Category, Difficulty};
+use working::word_search::exists;
 
 fn main() {
-    select_random_problem(None, Some(Difficulty::Medium));
 
+    let matrix: Vec<Vec<char>> = vec![
+        vec!['A', 'B', 'C', 'D'],
+        vec!['B', 'B', 'B', 'B'],
+        vec!['D', 'D', 'C', 'O'],
+        vec!['E', 'E', 'E', 'I'],
+    ];
+
+    let res = exists(matrix, "ABCD".to_string());
+    println!("{}", res);
 }
 
 
