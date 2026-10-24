@@ -1,15 +1,10 @@
-mod array;
+mod working;
 
-use array::group_anagrams::group_anagrams;
+use working::test::max_area;
+
 
 fn main() {
-    group_anagrams(vec![
-        "ate".to_string(),
-        "tae".to_string(),
-        "tea".to_string(),
-        "eat".to_string(),
-        "tar".to_string(),
-        "rat".to_string(),
-        "pat".to_string(),
-    ]);
+    let res = max_area(vec![1,7,2,3,5,3]); // 5 * 3 = 15
+
+    println!("res -> {}", res);
 }
