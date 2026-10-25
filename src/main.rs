@@ -1,10 +1,8 @@
-mod working;
+mod heaps;
 
-use working::test::max_area;
-
+use heaps::top_k_f_elements::top_k_frequent;
 
 fn main() {
-    let res = max_area(vec![1,7,2,3,5,3]); // 5 * 3 = 15
-
-    println!("res -> {}", res);
+    let res = top_k_frequent(vec![1,1,1,3,3,1,2,4,6], 2);
+    println!("{:?}", res);
 }

@@ -1,23 +1,20 @@
-use std::cmp;
+use std::cmp::{max, min};
 
 pub fn max_area(height: Vec<i32>) -> i32 {
-    let arr_len = height.len(); 
-    let (mut left, mut right) = (0, arr_len - 1);
-    let mut max_area = 0;    
+    let mut area:i32 = 0;
+    let (mut l, mut r) = (0, height.len() -1);
 
-    while left < right {
-        let base: usize = right - left;
-        let min_height: i32 = cmp::min(height[left], height[right]) as i32;
-        let area = (base * min_height as usize) as i32;
-        max_area = cmp::max(area, max_area);
+    while l < r {
+        let base = (r - l) as i32;
+        let min_height = min(height[l], height[r]);
+        let cur_ar = base * min_height;
 
-        if height[left] < height[right] {
-            left += 1;
-        } else {
-            right -= 1;
-        }
+        area = max(area, cur_ar);
+
+        if height[l] > height[r] { r -= 1; }
+        else { l += 1; }
     }
-
-    max_area as i32
+        
+    area
 }
 
