@@ -1,8 +1,11 @@
-mod heaps;
+mod intervals;
 
-use heaps::top_k_f_elements::top_k_frequent;
+use intervals::merge_intervals::merge;
+
+/*
+Input: intervals = []
+*/
 
 fn main() {
-    let res = top_k_frequent(vec![1,1,1,3,3,1,2,4,6], 2);
-    println!("{:?}", res);
+    merge(vec![vec![2,6], vec![1,3],vec![8,10],vec![15,18]]);
 }
