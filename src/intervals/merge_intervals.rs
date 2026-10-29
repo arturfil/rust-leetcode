@@ -16,3 +16,8 @@ pub fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     }
     res
 }
+
+/*
+Testing:
+merge(vec![vec![2,6], vec![1,3],vec![8,10],vec![15,18]]);
+*/

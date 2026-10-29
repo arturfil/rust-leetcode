@@ -1,11 +1,7 @@
-mod intervals;
+mod helpers;
 
-use intervals::merge_intervals::merge;
-
-/*
-Input: intervals = []
-*/
+use helpers::select_random::{select_random_problem, Difficulty};
 
 fn main() {
-    merge(vec![vec![2,6], vec![1,3],vec![8,10],vec![15,18]]);
+    select_random_problem(None, Some(Difficulty::Medium));
 }
